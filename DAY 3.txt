@@ -1,0 +1,401 @@
+
+Setting environment for using XAMPP for Windows.
+727997@128-IMAC36 c:\xampp
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 3
+Server version: 10.1.21-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2016, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
+| we2018             |
++--------------------+
+6 rows in set (0.00 sec)
+
+MariaDB [(none)]> ;
+ERROR: No query specified
+
+MariaDB [(none)]> create database csd2204w18;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| csd2204w18         |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
+| we2018             |
++--------------------+
+7 rows in set (0.00 sec)
+
+MariaDB [(none)]> use csd2204w18;
+Database changed
+MariaDB [csd2204w18]> show tables;
+Empty set (0.00 sec)
+
+MariaDB [csd2204w18]> create table customers( customersid integer(2), name varchar(20), nickname varchar(20), address varchar(20), city varchar(3
+    ->
+    -> exit
+    ->
+    -> p;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'exit
+
+p' at line 3
+MariaDB [csd2204w18]> create table customers( customersid integer(2), name varchar(20), nickname varchar(20), address varchar(20), city varchar(30), postalcode integer(6));
+Query OK, 0 rows affected (0.27 sec)
+
+MariaDB [csd2204w18]> show tables
+    -> show tables;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'show tables' at line 2
+MariaDB [csd2204w18]> show tables;
++----------------------+
+| Tables_in_csd2204w18 |
++----------------------+
+| customers            |
++----------------------+
+1 row in set (0.00 sec)
+
+MariaDB [csd2204w18]> desc customers
+    -> desc customers;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'desc customers' at line 2
+MariaDB [csd2204w18]> desc customers;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| customersid | int(2)      | YES  |     | NULL    |       |
+| name        | varchar(20) | YES  |     | NULL    |       |
+| nickname    | varchar(20) | YES  |     | NULL    |       |
+| address     | varchar(20) | YES  |     | NULL    |       |
+| city        | varchar(30) | YES  |     | NULL    |       |
+| postalcode  | int(6)      | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
+
+MariaDB [csd2204w18]> insert into customers values(1,'charles','jaison','scarborough','toronto',647754);
+Query OK, 1 row affected (0.04 sec)
+
+MariaDB [csd2204w18]> select* from customers
+    -> ;
++-------------+---------+----------+-------------+---------+------------+
+| customersid | name    | nickname | address     | city    | postalcode |
++-------------+---------+----------+-------------+---------+------------+
+|           1 | charles | jaison   | scarborough | toronto |     647754 |
++-------------+---------+----------+-------------+---------+------------+
+1 row in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from customers
+    -> ;
++-------------+---------+----------+-------------+---------+------------+
+| customersid | name    | nickname | address     | city    | postalcode |
++-------------+---------+----------+-------------+---------+------------+
+|           1 | charles | jaison   | scarborough | toronto |     647754 |
++-------------+---------+----------+-------------+---------+------------+
+1 row in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from customers;
++-------------+---------+----------+-------------+---------+------------+
+| customersid | name    | nickname | address     | city    | postalcode |
++-------------+---------+----------+-------------+---------+------------+
+|           1 | charles | jaison   | scarborough | toronto |     647754 |
++-------------+---------+----------+-------------+---------+------------+
+1 row in set (0.00 sec)
+
+MariaDB [csd2204w18]> insert into customers;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+MariaDB [csd2204w18]> insert into customers(2,'sreejith','kumar','northyork','toronto',647445);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '2,'sreejith','kumar','northyork','toronto',647445)' at line 1
+MariaDB [csd2204w18]> insert into customers values(2,'sreejith','kumar','northyork','toronto',647445);
+Query OK, 1 row affected (0.13 sec)
+
+MariaDB [csd2204w18]> select * from customers
+    -> select * from customers;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'select * from customers' at line 2
+MariaDB [csd2204w18]> select * from customers;
++-------------+----------+----------+-------------+---------+------------+
+| customersid | name     | nickname | address     | city    | postalcode |
++-------------+----------+----------+-------------+---------+------------+
+|           1 | charles  | jaison   | scarborough | toronto |     647754 |
+|           2 | sreejith | kumar    | northyork   | toronto |     647445 |
++-------------+----------+----------+-------------+---------+------------+
+2 rows in set (0.00 sec)
+
+MariaDB [csd2204w18]> insert into customers values(3,'charlize theron','cher','new york',655345);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [csd2204w18]> insert into customers values(3,'charlize theron','cher','north york','toronto',655345);
+Query OK, 1 row affected (0.05 sec)
+
+MariaDB [csd2204w18]> insert into customers values(4,'daniel jack','DJ','Spartan Building','Brazil',655345);
+Query OK, 1 row affected (0.04 sec)
+
+MariaDB [csd2204w18]> insert into customers values(5,'Donnan newman','New','250 Carlson blvd','Canada',657645);
+Query OK, 1 row affected (0.05 sec)
+
+MariaDB [csd2204w18]> insert into customers values(6,'Eston.M','M','21 York.DV','Toronto',657543);
+Query OK, 1 row affected (0.05 sec)
+
+MariaDB [csd2204w18]> insert into customers values(7,Bobby Chacko,'chac','kennedy','Newyork',657523);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Chacko,'chac','kennedy','Newyork',657523)' at line 1
+MariaDB [csd2204w18]> insert into customers values(7,'Bobby Chacko','chac','kennedy','Newyork',657523);
+Query OK, 1 row affected (0.05 sec)
+
+MariaDB [csd2204w18]> insert into customers values(8,'Ashko Charles','AK','Washington','USA',632523);
+Query OK, 1 row affected (0.05 sec)
+
+MariaDB [csd2204w18]> insert into customers values(9,'Tony Special','Specie','Oakville','GTA',632433);
+Query OK, 1 row affected (0.04 sec)
+
+MariaDB [csd2204w18]> insert into customers values(10,'Jack P','Sparrow','Oaster village','New Jersey',635663);
+Query OK, 1 row affected (0.09 sec)
+
+MariaDB [csd2204w18]> select * from customers
+    -> select * from customers;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'select * from customers' at line 2
+MariaDB [csd2204w18]> select * from customers;;
++-------------+-----------------+----------+------------------+------------+------------+
+| customersid | name            | nickname | address          | city       | postalcode |
++-------------+-----------------+----------+------------------+------------+------------+
+|           1 | charles         | jaison   | scarborough      | toronto    |     647754 |
+|           2 | sreejith        | kumar    | northyork        | toronto    |     647445 |
+|           3 | charlize theron | cher     | north york       | toronto    |     655345 |
+|           4 | daniel jack     | DJ       | Spartan Building | Brazil     |     655345 |
+|           5 | Donnan newman   | New      | 250 Carlson blvd | Canada     |     657645 |
+|           6 | Eston.M         | M        | 21 York.DV       | Toronto    |     657543 |
+|           7 | Bobby Chacko    | chac     | kennedy          | Newyork    |     657523 |
+|           8 | Ashko Charles   | AK       | Washington       | USA        |     632523 |
+|           9 | Tony Special    | Specie   | Oakville         | GTA        |     632433 |
+|          10 | Jack P          | Sparrow  | Oaster village   | New Jersey |     635663 |
++-------------+-----------------+----------+------------------+------------+------------+
+10 rows in set (0.00 sec)
+
+ERROR: No query specified
+
+MariaDB [csd2204w18]> select * from customers WHERE city='toronto';
++-------------+-----------------+----------+-------------+---------+------------+
+| customersid | name            | nickname | address     | city    | postalcode |
++-------------+-----------------+----------+-------------+---------+------------+
+|           1 | charles         | jaison   | scarborough | toronto |     647754 |
+|           2 | sreejith        | kumar    | northyork   | toronto |     647445 |
+|           3 | charlize theron | cher     | north york  | toronto |     655345 |
+|           6 | Eston.M         | M        | 21 York.DV  | Toronto |     657543 |
++-------------+-----------------+----------+-------------+---------+------------+
+4 rows in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from customers WHERE name='charles';
++-------------+---------+----------+-------------+---------+------------+
+| customersid | name    | nickname | address     | city    | postalcode |
++-------------+---------+----------+-------------+---------+------------+
+|           1 | charles | jaison   | scarborough | toronto |     647754 |
++-------------+---------+----------+-------------+---------+------------+
+1 row in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from customers WHERE city='oakville';
+Empty set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from customers WHERE city='brazil';
++-------------+-------------+----------+------------------+--------+------------+
+| customersid | name        | nickname | address          | city   | postalcode |
++-------------+-------------+----------+------------------+--------+------------+
+|           4 | daniel jack | DJ       | Spartan Building | Brazil |     655345 |
++-------------+-------------+----------+------------------+--------+------------+
+1 row in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from customers WHERE nickname='AK' and city= 'newyork';
+Empty set (0.03 sec)
+
+MariaDB [csd2204w18]> select * from customers WHERE nickname='AK' and city= 'USA';
++-------------+---------------+----------+------------+------+------------+
+| customersid | name          | nickname | address    | city | postalcode |
++-------------+---------------+----------+------------+------+------------+
+|           8 | Ashko Charles | AK       | Washington | USA  |     632523 |
++-------------+---------------+----------+------------+------+------------+
+1 row in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from customers
+    -> ;
++-------------+-----------------+----------+------------------+------------+------------+
+| customersid | name            | nickname | address          | city       | postalcode |
++-------------+-----------------+----------+------------------+------------+------------+
+|           1 | charles         | jaison   | scarborough      | toronto    |     647754 |
+|           2 | sreejith        | kumar    | northyork        | toronto    |     647445 |
+|           3 | charlize theron | cher     | north york       | toronto    |     655345 |
+|           4 | daniel jack     | DJ       | Spartan Building | Brazil     |     655345 |
+|           5 | Donnan newman   | New      | 250 Carlson blvd | Canada     |     657645 |
+|           6 | Eston.M         | M        | 21 York.DV       | Toronto    |     657543 |
+|           7 | Bobby Chacko    | chac     | kennedy          | Newyork    |     657523 |
+|           8 | Ashko Charles   | AK       | Washington       | USA        |     632523 |
+|           9 | Tony Special    | Specie   | Oakville         | GTA        |     632433 |
+|          10 | Jack P          | Sparrow  | Oaster village   | New Jersey |     635663 |
++-------------+-----------------+----------+------------------+------------+------------+
+10 rows in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from customers  where city='toronto' or city='canada';
++-------------+-----------------+----------+------------------+---------+------------+
+| customersid | name            | nickname | address          | city    | postalcode |
++-------------+-----------------+----------+------------------+---------+------------+
+|           1 | charles         | jaison   | scarborough      | toronto |     647754 |
+|           2 | sreejith        | kumar    | northyork        | toronto |     647445 |
+|           3 | charlize theron | cher     | north york       | toronto |     655345 |
+|           5 | Donnan newman   | New      | 250 Carlson blvd | Canada  |     657645 |
+|           6 | Eston.M         | M        | 21 York.DV       | Toronto |     657543 |
++-------------+-----------------+----------+------------------+---------+------------+
+5 rows in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from customers where customersid between=2 and 7;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '=2 and 7' at line 1
+MariaDB [csd2204w18]> select * from customers where customersid between 2 and 7;
++-------------+-----------------+----------+------------------+---------+------------+
+| customersid | name            | nickname | address          | city    | postalcode |
++-------------+-----------------+----------+------------------+---------+------------+
+|           2 | sreejith        | kumar    | northyork        | toronto |     647445 |
+|           3 | charlize theron | cher     | north york       | toronto |     655345 |
+|           4 | daniel jack     | DJ       | Spartan Building | Brazil  |     655345 |
+|           5 | Donnan newman   | New      | 250 Carlson blvd | Canada  |     657645 |
+|           6 | Eston.M         | M        | 21 York.DV       | Toronto |     657543 |
+|           7 | Bobby Chacko    | chac     | kennedy          | Newyork |     657523 |
++-------------+-----------------+----------+------------------+---------+------------+
+6 rows in set (0.03 sec)
+
+MariaDB [csd2204w18]> select * from customers where customersid between 7 and 2;
+Empty set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from customers where nickname between kumar and New;
+ERROR 1054 (42S22): Unknown column 'kumar' in 'where clause'
+MariaDB [csd2204w18]> select * from customers where customersid between 'kumar' and 'New';
+Empty set, 20 warnings (0.02 sec)
+
+MariaDB [csd2204w18]> select * from customers where customersid between 'cher' and 'New';
+Empty set, 20 warnings (0.00 sec)
+
+MariaDB [csd2204w18]> select * from customers where nickname between 'cher' and 'New';
++-------------+-----------------+----------+------------------+---------+------------+
+| customersid | name            | nickname | address          | city    | postalcode |
++-------------+-----------------+----------+------------------+---------+------------+
+|           1 | charles         | jaison   | scarborough      | toronto |     647754 |
+|           2 | sreejith        | kumar    | northyork        | toronto |     647445 |
+|           3 | charlize theron | cher     | north york       | toronto |     655345 |
+|           4 | daniel jack     | DJ       | Spartan Building | Brazil  |     655345 |
+|           5 | Donnan newman   | New      | 250 Carlson blvd | Canada  |     657645 |
+|           6 | Eston.M         | M        | 21 York.DV       | Toronto |     657543 |
++-------------+-----------------+----------+------------------+---------+------------+
+6 rows in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from customers
+    -> ;
++-------------+-----------------+----------+------------------+------------+------------+
+| customersid | name            | nickname | address          | city       | postalcode |
++-------------+-----------------+----------+------------------+------------+------------+
+|           1 | charles         | jaison   | scarborough      | toronto    |     647754 |
+|           2 | sreejith        | kumar    | northyork        | toronto    |     647445 |
+|           3 | charlize theron | cher     | north york       | toronto    |     655345 |
+|           4 | daniel jack     | DJ       | Spartan Building | Brazil     |     655345 |
+|           5 | Donnan newman   | New      | 250 Carlson blvd | Canada     |     657645 |
+|           6 | Eston.M         | M        | 21 York.DV       | Toronto    |     657543 |
+|           7 | Bobby Chacko    | chac     | kennedy          | Newyork    |     657523 |
+|           8 | Ashko Charles   | AK       | Washington       | USA        |     632523 |
+|           9 | Tony Special    | Specie   | Oakville         | GTA        |     632433 |
+|          10 | Jack P          | Sparrow  | Oaster village   | New Jersey |     635663 |
++-------------+-----------------+----------+------------------+------------+------------+
+10 rows in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from customers where name like 'c%';
++-------------+-----------------+----------+-------------+---------+------------+
+| customersid | name            | nickname | address     | city    | postalcode |
++-------------+-----------------+----------+-------------+---------+------------+
+|           1 | charles         | jaison   | scarborough | toronto |     647754 |
+|           3 | charlize theron | cher     | north york  | toronto |     655345 |
++-------------+-----------------+----------+-------------+---------+------------+
+2 rows in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from customers where name like 'd%';
++-------------+---------------+----------+------------------+--------+------------+
+| customersid | name          | nickname | address          | city   | postalcode |
++-------------+---------------+----------+------------------+--------+------------+
+|           4 | daniel jack   | DJ       | Spartan Building | Brazil |     655345 |
+|           5 | Donnan newman | New      | 250 Carlson blvd | Canada |     657645 |
++-------------+---------------+----------+------------------+--------+------------+
+2 rows in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from customers where city like 'n%';
++-------------+--------------+----------+----------------+------------+------------+
+| customersid | name         | nickname | address        | city       | postalcode |
++-------------+--------------+----------+----------------+------------+------------+
+|           7 | Bobby Chacko | chac     | kennedy        | Newyork    |     657523 |
+|          10 | Jack P       | Sparrow  | Oaster village | New Jersey |     635663 |
++-------------+--------------+----------+----------------+------------+------------+
+2 rows in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from customers where name like '_o%';
++-------------+---------------+----------+------------------+---------+------------+
+| customersid | name          | nickname | address          | city    | postalcode |
++-------------+---------------+----------+------------------+---------+------------+
+|           5 | Donnan newman | New      | 250 Carlson blvd | Canada  |     657645 |
+|           7 | Bobby Chacko  | chac     | kennedy          | Newyork |     657523 |
+|           9 | Tony Special  | Specie   | Oakville         | GTA     |     632433 |
++-------------+---------------+----------+------------------+---------+------------+
+3 rows in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from customers where name like '_on%';
++-------------+---------------+----------+------------------+--------+------------+
+| customersid | name          | nickname | address          | city   | postalcode |
++-------------+---------------+----------+------------------+--------+------------+
+|           5 | Donnan newman | New      | 250 Carlson blvd | Canada |     657645 |
+|           9 | Tony Special  | Specie   | Oakville         | GTA    |     632433 |
++-------------+---------------+----------+------------------+--------+------------+
+2 rows in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from customers where name like '_o_n%';
++-------------+---------------+----------+------------------+--------+------------+
+| customersid | name          | nickname | address          | city   | postalcode |
++-------------+---------------+----------+------------------+--------+------------+
+|           5 | Donnan newman | New      | 250 Carlson blvd | Canada |     657645 |
++-------------+---------------+----------+------------------+--------+------------+
+1 row in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from customers where name like 'd%' and city='Toronto' ;
+Empty set (0.02 sec)
+
+MariaDB [csd2204w18]> select * from customers where name like 'd%' and city='canada' ;
++-------------+---------------+----------+------------------+--------+------------+
+| customersid | name          | nickname | address          | city   | postalcode |
++-------------+---------------+----------+------------------+--------+------------+
+|           5 | Donnan newman | New      | 250 Carlson blvd | Canada |     657645 |
++-------------+---------------+----------+------------------+--------+------------+
+1 row in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from customers where customersID IN(2,4,7,9);
++-------------+--------------+----------+------------------+---------+------------+
+| customersid | name         | nickname | address          | city    | postalcode |
++-------------+--------------+----------+------------------+---------+------------+
+|           2 | sreejith     | kumar    | northyork        | toronto |     647445 |
+|           4 | daniel jack  | DJ       | Spartan Building | Brazil  |     655345 |
+|           7 | Bobby Chacko | chac     | kennedy          | Newyork |     657523 |
+|           9 | Tony Special | Specie   | Oakville         | GTA     |     632433 |
++-------------+--------------+----------+------------------+---------+------------+
+4 rows in set (0.01 sec)
+
+MariaDB [csd2204w18]> select * from customers where city IN('newyork','canada');
++-------------+---------------+----------+------------------+---------+------------+
+| customersid | name          | nickname | address          | city    | postalcode |
++-------------+---------------+----------+------------------+---------+------------+
+|           5 | Donnan newman | New      | 250 Carlson blvd | Canada  |     657645 |
+|           7 | Bobby Chacko  | chac     | kennedy          | Newyork |     657523 |
++-------------+---------------+----------+------------------+---------+------------+
+2 rows in set (0.00 sec)
+
+MariaDB [csd2204w18]>
