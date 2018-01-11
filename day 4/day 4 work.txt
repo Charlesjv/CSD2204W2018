@@ -1,0 +1,16 @@
+MariaDB [csd2204w18]> select city,count(customersid)*100/10 from customers group by city;
++------------+---------------------------+
+| city       | count(customersid)*100/10 |
++------------+---------------------------+
+| NULL       |                   10.0000 |
+| Brazil     |                   10.0000 |
+| Canada     |                   20.0000 |
+| GTA        |                   10.0000 |
+| New Jersey |                   10.0000 |
+| Newyork    |                   10.0000 |
+| toronto    |                   30.0000 |
+| USA        |                   10.0000 |
++------------+---------------------------+
+8 rows in set (0.00 sec)
+
+Description :-> It counts the percentage of customers staying in  the same city 
