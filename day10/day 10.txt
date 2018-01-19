@@ -1,0 +1,280 @@
+
+Setting environment for using XAMPP for Windows.
+727997@128-IMAC36 c:\xampp
+# mysql -u root -p;
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+
+727997@128-IMAC36 c:\xampp
+#
+727997@128-IMAC36 c:\xampp
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 3
+Server version: 10.1.21-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2016, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> CREATE TABLE manu(Code INTEGER(3) AUTO_INCREMENT ,Name VARCHAR(50) NOT NULL,CONSTRAINT PK_MANU PRIMARY KEY (CODE));
+ERROR 1046 (3D000): No database selected
+MariaDB [(none)]> INSERT INTO manu(Name) VALUES('Sony');INSERT INTO manu(Name) VALUES('Creative Labs');INSERT INTO manu(Name) VALUES('Hewlett-Packard');INSERT INTO manu(Name) VALUES('Iomega');INSERT INTO manu(Name) VALUES('Fujitsu');INSERT INTO manu(Name) VALUES('Winchester');INSERT INTO manu(Name) VALUES('moxDroid Labs Inc');INSERT INTO manu(Name) VALUES("Dell");INSERT INTO manu(Name) VALUES("Bell Labs");CREATE TABLE Products (    Code INTEGER(3) AUTO_INCREMENT,    Name VARCHAR(255) NOT NULL ,    Price DECIMAL NOT NULL ,    Manufacturer INTEGER(3),    CONSTRAINT PK_PRODUCTS PRIMARY KEY (Code),    CONSTRAINT FK_PRODUCTS FOREIGN KEY (Manufacturer) REFERENCES manu(Code)     );INSERT INTO Products(Name,Price,Manufacturer) VALUES('Hard drive',240,5);INSERT INTO Products(Name,Price,Manufacturer) VALUES('Memory',120,6);INSERT INTO Products(Name,Price,Manufacturer) VALUES('ZIP drive',150,4);INSERT INTO Products(Name,Price,Manufacturer) VALUES('Floppy disk',5,6);INSERT INTO Products(Name,Price,Manufacturer) VALUES('Monitor',240,1);INSERT INTO Products(Name,Price,Manufacturer) VALUES('DVD drive',180,2);INSERT INTO Products(Name,Price,Manufacturer) VALUES('CD drive',90,2);INSERT INTO Products(Name,Price,Manufacturer) VALUES('Printer',270,3);INSERT INTO Products(Name,Price,Manufacturer) VALUES('Toner cartridge',66,3);INSERT INTO Products(Name,Price,Manufacturer) VALUES('DVD burner',180,2);INSERT INTO Products(Name,Price,Manufacturer) VALUES('Printer',40.00,7);INSERT INTO Products(Name,Price,Manufacturer) VALUES('Toner cartridge',54.00,7);INSERT INTO Products(Name,Price,Manufacturer) VALUES('DVD burner',78.00,7);
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+MariaDB [(none)]> create database csd2204w18
+    -> ;
+Query OK, 1 row affected (0.70 sec)
+
+MariaDB [(none)]> CREATE TABLE manu(Code INTEGER(3) AUTO_INCREMENT ,Name VARCHAR(50) NOT NULL,CONSTRAINT PK_MANU PRIMARY KEY (CODE));INSERT INTO manu(Name) VALUES('Sony');INSERT INTO manu(Name) VALUES('Creative Labs');INSERT INTO manu(Name) VALUES('Hewlett-Packard');INSERT INTO manu(Name) VALUES('Iomega');INSERT INTO manu(Name) VALUES('Fujitsu');INSERT INTO manu(Name) VALUES('Winchester');INSERT INTO manu(Name) VALUES('moxDroid Labs Inc');INSERT INTO manu(Name) VALUES("Dell");INSERT INTO manu(Name) VALUES("Bell Labs");
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+MariaDB [(none)]> use csd2204w18;
+Database changed
+MariaDB [csd2204w18]> CREATE TABLE manu(Code INTEGER(3) AUTO_INCREMENT ,Name VARCHAR(50) NOT NULL,CONSTRAINT PK_MANU PRIMARY KEY (CODE));INSERT INTO manu(Name) VALUES('Sony');INSERT INTO manu(Name) VALUES('Creative Labs');INSERT INTO manu(Name) VALUES('Hewlett-Packard');INSERT INTO manu(Name) VALUES('Iomega');INSERT INTO manu(Name) VALUES('Fujitsu');INSERT INTO manu(Name) VALUES('Winchester');INSERT INTO manu(Name) VALUES('moxDroid Labs Inc');INSERT INTO manu(Name) VALUES("Dell");INSERT INTO manu(Name) VALUES("Bell Labs");
+Query OK, 0 rows affected (5.53 sec)
+
+Query OK, 1 row affected (0.30 sec)
+
+Query OK, 1 row affected (0.44 sec)
+
+Query OK, 1 row affected (0.72 sec)
+
+Query OK, 1 row affected (0.61 sec)
+
+Query OK, 1 row affected (0.34 sec)
+
+Query OK, 1 row affected (0.19 sec)
+
+Query OK, 1 row affected (0.36 sec)
+
+Query OK, 1 row affected (0.36 sec)
+
+Query OK, 1 row affected (0.27 sec)
+
+MariaDB [csd2204w18]> CREATE TABLE Products (    Code INTEGER(3) AUTO_INCREMENT,    Name VARCHAR(255) NOT NULL ,    Price DECIMAL NOT NULL ,    Manufacturer INTEGER(3),    CONSTRAINT PK_PRODUCTS PRIMARY KEY (Code),    CONSTRAINT FK_PRODUCTS FOREIGN KEY (Manufacturer) REFERENCES manu(Code)     );INSERT INTO Products(Name,Price,Manufacturer) VALUES('Hard drive',240,5);INSERT INTO Products(Name,Price,Manufacturer) VALUES('Memory',120,6);INSERT INTO Products(Name,Price,Manufacturer) VALUES('ZIP drive',150,4);INSERT INTO Products(Name,Price,Manufacturer) VALUES('Floppy disk',5,6);INSERT INTO Products(Name,Price,Manufacturer) VALUES('Monitor',240,1);INSERT INTO Products(Name,Price,Manufacturer) VALUES('DVD drive',180,2);INSERT INTO Products(Name,Price,Manufacturer) VALUES('CD drive',90,2);INSERT INTO Products(Name,Price,Manufacturer) VALUES('Printer',270,3);INSERT INTO Products(Name,Price,Manufacturer) VALUES('Toner cartridge',66,3);INSERT INTO Products(Name,Price,Manufacturer) VALUES('DVD burner',180,2);INSERT INTO Products(Name,Price,Manufacturer) VALUES('Printer',40.00,7);INSERT INTO Products(Name,Price,Manufacturer) VALUES('Toner cartridge',54.00,7);INSERT INTO Products(Name,Price,Manufacturer) VALUES('DVD burner',78.00,7);
+Query OK, 0 rows affected (6.22 sec)
+
+Query OK, 1 row affected (2.31 sec)
+
+Query OK, 1 row affected (0.16 sec)
+
+Query OK, 1 row affected (0.56 sec)
+
+Query OK, 1 row affected (0.22 sec)
+
+Query OK, 1 row affected (0.20 sec)
+
+Query OK, 1 row affected (0.30 sec)
+
+Query OK, 1 row affected (0.19 sec)
+
+Query OK, 1 row affected (0.22 sec)
+
+Query OK, 1 row affected (0.31 sec)
+
+Query OK, 1 row affected (0.22 sec)
+
+Query OK, 1 row affected (0.22 sec)
+
+Query OK, 1 row affected (0.22 sec)
+
+Query OK, 1 row affected (0.24 sec)
+
+MariaDB [csd2204w18]> select * from d10_v1 where code>6;
+ERROR 1146 (42S02): Table 'csd2204w18.d10_v1' doesn't exist
+MariaDB [csd2204w18]> select * from d10_v1 where code > 6;
+ERROR 1146 (42S02): Table 'csd2204w18.d10_v1' doesn't exist
+MariaDB [csd2204w18]> create view d10_v1 as select * from products;
+Query OK, 0 rows affected (0.17 sec)
+
+MariaDB [csd2204w18]> select * from d10_v1 where code > 6;
++------+-----------------+-------+--------------+
+| Code | Name            | Price | Manufacturer |
++------+-----------------+-------+--------------+
+|    7 | CD drive        |    90 |            2 |
+|    8 | Printer         |   270 |            3 |
+|    9 | Toner cartridge |    66 |            3 |
+|   10 | DVD burner      |   180 |            2 |
+|   11 | Printer         |    40 |            7 |
+|   12 | Toner cartridge |    54 |            7 |
+|   13 | DVD burner      |    78 |            7 |
++------+-----------------+-------+--------------+
+7 rows in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from d10_v1 where code in(7,12,8,9);
++------+-----------------+-------+--------------+
+| Code | Name            | Price | Manufacturer |
++------+-----------------+-------+--------------+
+|    7 | CD drive        |    90 |            2 |
+|    8 | Printer         |   270 |            3 |
+|    9 | Toner cartridge |    66 |            3 |
+|   12 | Toner cartridge |    54 |            7 |
++------+-----------------+-------+--------------+
+4 rows in set (0.00 sec)
+
+MariaDB [csd2204w18]> insert into d10_v1 values(20,'hard_disk',100,3);
+Query OK, 1 row affected (0.14 sec)
+
+MariaDB [csd2204w18]> select * from d10_v1;l
++------+-----------------+-------+--------------+
+| Code | Name            | Price | Manufacturer |
++------+-----------------+-------+--------------+
+|    1 | Hard drive      |   240 |            5 |
+|    2 | Memory          |   120 |            6 |
+|    3 | ZIP drive       |   150 |            4 |
+|    4 | Floppy disk     |     5 |            6 |
+|    5 | Monitor         |   240 |            1 |
+|    6 | DVD drive       |   180 |            2 |
+|    7 | CD drive        |    90 |            2 |
+|    8 | Printer         |   270 |            3 |
+|    9 | Toner cartridge |    66 |            3 |
+|   10 | DVD burner      |   180 |            2 |
+|   11 | Printer         |    40 |            7 |
+|   12 | Toner cartridge |    54 |            7 |
+|   13 | DVD burner      |    78 |            7 |
+|   20 | hard_disk       |   100 |            3 |
++------+-----------------+-------+--------------+
+14 rows in set (0.00 sec)
+
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'l' at line 1
+MariaDB [csd2204w18]> delete from d10_v1 where code =20;
+Query OK, 1 row affected (0.14 sec)
+
+MariaDB [csd2204w18]> insert into d10_v1 values(20,'hard_disk',100,3);
+Query OK, 1 row affected (0.11 sec)
+
+MariaDB [csd2204w18]> select * from products;
++------+-----------------+-------+--------------+
+| Code | Name            | Price | Manufacturer |
++------+-----------------+-------+--------------+
+|    1 | Hard drive      |   240 |            5 |
+|    2 | Memory          |   120 |            6 |
+|    3 | ZIP drive       |   150 |            4 |
+|    4 | Floppy disk     |     5 |            6 |
+|    5 | Monitor         |   240 |            1 |
+|    6 | DVD drive       |   180 |            2 |
+|    7 | CD drive        |    90 |            2 |
+|    8 | Printer         |   270 |            3 |
+|    9 | Toner cartridge |    66 |            3 |
+|   10 | DVD burner      |   180 |            2 |
+|   11 | Printer         |    40 |            7 |
+|   12 | Toner cartridge |    54 |            7 |
+|   13 | DVD burner      |    78 |            7 |
+|   20 | hard_disk       |   100 |            3 |
++------+-----------------+-------+--------------+
+14 rows in set (0.00 sec)
+
+MariaDB [csd2204w18]> delete from d10_v1 where code = 20
+    -> ;
+Query OK, 1 row affected (0.22 sec)
+
+MariaDB [csd2204w18]> select * from products;
++------+-----------------+-------+--------------+
+| Code | Name            | Price | Manufacturer |
++------+-----------------+-------+--------------+
+|    1 | Hard drive      |   240 |            5 |
+|    2 | Memory          |   120 |            6 |
+|    3 | ZIP drive       |   150 |            4 |
+|    4 | Floppy disk     |     5 |            6 |
+|    5 | Monitor         |   240 |            1 |
+|    6 | DVD drive       |   180 |            2 |
+|    7 | CD drive        |    90 |            2 |
+|    8 | Printer         |   270 |            3 |
+|    9 | Toner cartridge |    66 |            3 |
+|   10 | DVD burner      |   180 |            2 |
+|   11 | Printer         |    40 |            7 |
+|   12 | Toner cartridge |    54 |            7 |
+|   13 | DVD burner      |    78 |            7 |
++------+-----------------+-------+--------------+
+13 rows in set (0.00 sec)
+
+MariaDB [csd2204w18]> create view d10_v1 as select products.code,products.name "product",manu.name "manufacturer" from manu inner join products on products.code=manu.code;
+ERROR 1050 (42S01): Table 'd10_v1' already exists
+MariaDB [csd2204w18]> create view view1 as select products.code,products.name "product",manu.name "manufacturer" from manu inner join products on products.code=manu.code;
+Query OK, 0 rows affected (0.25 sec)
+
+MariaDB [csd2204w18]> select * from view1;
++------+-----------------+-------------------+
+| code | product         | manufacturer      |
++------+-----------------+-------------------+
+|    1 | Hard drive      | Sony              |
+|    2 | Memory          | Creative Labs     |
+|    3 | ZIP drive       | Hewlett-Packard   |
+|    4 | Floppy disk     | Iomega            |
+|    5 | Monitor         | Fujitsu           |
+|    6 | DVD drive       | Winchester        |
+|    7 | CD drive        | moxDroid Labs Inc |
+|    8 | Printer         | Dell              |
+|    9 | Toner cartridge | Bell Labs         |
++------+-----------------+-------------------+
+9 rows in set (0.00 sec)
+
+MariaDB [csd2204w18]> insert into view1 values(20,'cd_drive','samsung');
+ERROR 1394 (HY000): Can not insert into join view 'csd2204w18.view1' without fields list
+MariaDB [csd2204w18]> update view1 set code = 8 where manufacturer ='bell labs';
+ERROR 1062 (23000): Duplicate entry '8' for key 'PRIMARY'
+MariaDB [csd2204w18]> create view v_today (today) as select current_date;
+Query OK, 0 rows affected (0.11 sec)
+
+MariaDB [csd2204w18]> select v_today;
+ERROR 1054 (42S22): Unknown column 'v_today' in 'field list'
+MariaDB [csd2204w18]> select * from v_today;
++------------+
+| today      |
++------------+
+| 2018-01-19 |
++------------+
+1 row in set (0.00 sec)
+
+MariaDB [csd2204w18]> create or replace v_today(now) as select_now();
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'v_today(now) as select_now()' at line 1
+MariaDB [csd2204w18]> create or replace v_today(now) as select now();
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'v_today(now) as select now()' at line 1
+MariaDB [csd2204w18]> create or replace v_today (now) as select now();
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'v_today (now) as select now()' at line 1
+MariaDB [csd2204w18]> create or replace view v_today (now) as select now();
+Query OK, 0 rows affected (0.08 sec)
+
+MariaDB [csd2204w18]> select * from v_today;
++---------------------+
+| now                 |
++---------------------+
+| 2018-01-19 08:50:36 |
++---------------------+
+1 row in set (0.00 sec)
+
+MariaDB [csd2204w18]> drop view if exists v_today;
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [csd2204w18]>
