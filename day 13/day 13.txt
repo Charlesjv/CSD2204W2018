@@ -1,0 +1,330 @@
+
+Setting environment for using XAMPP for Windows.
+727997@128-IMAC36 c:\xampp
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 2
+Server version: 10.1.21-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2016, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+5 rows in set (0.17 sec)
+
+MariaDB [(none)]> CREATE OR REPLACE TABLE EMP_DETAILS(EMPLOYEE_ID INTEGER(6) PRIMARY KEY,FIRST_NAME VARCHAR(20),LAST_NAME VARCHAR(25) NOT NULL,EMAIL VARCHAR(25) NOT NULL,PHONE_NUMBER VARCHAR(20),HIRE_DATE DATE,JOB_ID VARCHAR(10) NOT NULL,SALARY REAL(8,2),COMMISSION_PCT REAL(2,2));INSERT INTO EMP_DETAILS VALUES(100,'STEVEN','KING','STEVEN.KING@GMAIL.COM','2345678','1998-01-14','AD_PRES',24000.0,0.10);INSERT INTO EMP_DETAILS VALUES(101,'NEENA','KOCHHAR','NEENA.KOCHHAR@GMAIL.COM','2345678','2002-10-10','AD_VP',17000.0,0.50);INSERT INTO EMP_DETAILS VALUES(102,'LEX','DE HANN','LEX.HANN@GMAIL.COM','2345678','1995-10-20','AD_VP',17000.0,0.50);INSERT INTO EMP_DETAILS VALUES(103,'ALEXANDER','HUNOLD','ALEXANDER.HUNOLD@GMAIL.COM','2345678','2002-11-23','IT_PROG',9000.0,0.25);INSERT INTO EMP_DETAILS VALUES(104,'BRUCE','ERNST','BRUCE.ERNST@GMAIL.COM','2345678','2003-08-24','IT_PROG',6000.0,0.25);INSERT INTO EMP_DETAILS VALUES(105,'DAVID','AUSTIN','DAVID.AUSTIN@GMAIL.COM','2345678','2005-04-10','IT_PROG',4800.0,0.25);
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+MariaDB [(none)]> create database d13;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]> use d13;
+Database changed
+MariaDB [d13]> CREATE OR REPLACE TABLE EMP_DETAILS(EMPLOYEE_ID INTEGER(6) PRIMARY KEY,FIRST_NAME VARCHAR(20),LAST_NAME VARCHAR(25) NOT NULL,EMAIL VARCHAR(25) NOT NULL,PHONE_NUMBER VARCHAR(20),HIRE_DATE DATE,JOB_ID VARCHAR(10) NOT NULL,SALARY REAL(8,2),COMMISSION_PCT REAL(2,2));INSERT INTO EMP_DETAILS VALUES(100,'STEVEN','KING','STEVEN.KING@GMAIL.COM','2345678','1998-01-14','AD_PRES',24000.0,0.10);INSERT INTO EMP_DETAILS VALUES(101,'NEENA','KOCHHAR','NEENA.KOCHHAR@GMAIL.COM','2345678','2002-10-10','AD_VP',17000.0,0.50);INSERT INTO EMP_DETAILS VALUES(102,'LEX','DE HANN','LEX.HANN@GMAIL.COM','2345678','1995-10-20','AD_VP',17000.0,0.50);INSERT INTO EMP_DETAILS VALUES(103,'ALEXANDER','HUNOLD','ALEXANDER.HUNOLD@GMAIL.COM','2345678','2002-11-23','IT_PROG',9000.0,0.25);INSERT INTO EMP_DETAILS VALUES(104,'BRUCE','ERNST','BRUCE.ERNST@GMAIL.COM','2345678','2003-08-24','IT_PROG',6000.0,0.25);INSERT INTO EMP_DETAILS VALUES(105,'DAVID','AUSTIN','DAVID.AUSTIN@GMAIL.COM','2345678','2005-04-10','IT_PROG',4800.0,0.25);
+Query OK, 0 rows affected (0.95 sec)
+
+Query OK, 1 row affected (0.13 sec)
+
+Query OK, 1 row affected (0.08 sec)
+
+Query OK, 1 row affected (0.22 sec)
+
+Query OK, 1 row affected, 1 warning (0.22 sec)
+
+Query OK, 1 row affected (0.11 sec)
+
+Query OK, 1 row affected (0.19 sec)
+
+MariaDB [d13]> CREATE OR REPLACE TABLE LOG_EMP_DETAILS(    EMPLOYEE_ID INTEGER(6),    SALARY DOUBLE(8,2),    EDTTIME DATETIME);
+Query OK, 0 rows affected (1.63 sec)
+
+MariaDB [d13]> CREATE OR REPLACE TABLE STUD_MARKS(    STUDENT_ID INTEGER(3) PRIMARY KEY,    NAME VARCHAR(40) NOT NULL,    SUB1 DOUBLE(4,2),    SUB2 DOUBLE(4,2),    SUB3 DOUBLE(4,2),    SUB4 DOUBLE(4,2),    SUB5 DOUBLE(4,2),    TOTAL DOUBLE(5,2),    PERCENTAGE DOUBLE(4,2),    GRADE VARCHAR(20));
+Query OK, 0 rows affected (1.19 sec)
+
+MariaDB [d13]> INSERT INTO STUD_MARKS (STUDENT_ID,NAME) VALUES(1,'ALEX');INSERT INTO STUD_MARKS (STUDENT_ID,NAME) VALUES(2,'BOB');INSERT INTO STUD_MARKS (STUDENT_ID,NAME) VALUES(3,'CHARLEY');INSERT INTO STUD_MARKS (STUDENT_ID,NAME) VALUES(4,'DONNA');
+Query OK, 1 row affected (0.13 sec)
+
+Query OK, 1 row affected (0.17 sec)
+
+Query OK, 1 row affected (0.22 sec)
+
+Query OK, 1 row affected (0.25 sec)
+
+MariaDB [d13]> CREATE TABLE price_logs (     id INT(11) PRIMARY KEY AUTO_INCREMENT,     product_code INT(3) NOT NULL,     price DECIMAL(10) NOT NULL);
+Query OK, 0 rows affected (1.09 sec)
+
+MariaDB [d13]> CREATE TABLE price_logs (     id INT(11) PRIMARY KEY AUTO_INCREMENT,     product_code INT(3) NOT NULL,     price DECIMAL(10) NOT NULL);
+ERROR 1050 (42S01): Table 'price_logs' already exists
+MariaDB [d13]> CREATE TABLE price_logs (     id INT(11) PRIMARY KEY AUTO_INCREMENT,     product_code INT(3) NOT NULL,     price DECIMAL(10) NOT NULL);
+ERROR 1050 (42S01): Table 'price_logs' already exists
+MariaDB [d13]> CREATE TABLE price_logs (     id INT(11) PRIMARY KEY AUTO_INCREMENT,     product_code INT(3) NOT NULL,     price DECIMAL(10) NOT NULL);
+ERROR 1050 (42S01): Table 'price_logs' already exists
+MariaDB [d13]> CREATETRIGGERins_sum BEFOREINSERTONaccount FOREACHROWSET@sum=@sum+NEW.amount;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'CREATETRIGGERins_sum BEFOREINSERTONaccount FOREACHROWSET@sum=@sum+NEW.amount' at line 1
+MariaDB [d13]>
+MariaDB [d13]> CREATETRIGGERins_sum BEFOREINSERTONaccount FOREACHROWSET@sum=@sum+NEW.amount;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'CREATETRIGGERins_sum BEFOREINSERTONaccount FOREACHROWSET@sum=@sum+NEW.amount' at line 1
+MariaDB [d13]> delimiter $$
+MariaDB [d13]> CREATETRIGGERins_sum BEFOREINSERTONaccount FOREACHROWSET@sum=@sum+NEW.amount;
+    -> $$
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'CREATETRIGGERins_sum BEFOREINSERTONaccount FOREACHROWSET@sum=@sum+NEW.amount' at line 1
+MariaDB [d13]> CREATETRIGGERins_sum BEFOREINSERTONaccount FOREACHROWSET@sum=@sum+NEW.amount;
+    -> $$
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'CREATETRIGGERins_sum BEFOREINSERTONaccount FOREACHROWSET@sum=@sum+NEW.amount' at line 1
+MariaDB [d13]> CREATE TRIGGER ins_sum BEFORE INSERT ON number FOREACHROWSET@sum=@sum+NEW.amount;
+    ->
+    -> $$
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FOREACHROWSET@sum=@sum+NEW.amount' at line 1
+MariaDB [d13]> CREATE TRIGGER ins_sum BEFORE INSERT ON number FOR EACH ROW SET @sum= NEW.n1;
+    -> $$
+ERROR 1146 (42S02): Table 'd13.number' doesn't exist
+MariaDB [d13]> create table number (sum decimal(10,2));
+    -> $$
+Query OK, 0 rows affected (1.02 sec)
+
+MariaDB [d13]> insert into number values(10)
+    -> $$
+Query OK, 1 row affected (0.06 sec)
+
+MariaDB [d13]> select @sum1
+    -> $$
++-------+
+| @sum1 |
++-------+
+| NULL  |
++-------+
+1 row in set (0.00 sec)
+
+MariaDB [d13]> show tables$$
++-----------------+
+| Tables_in_d13   |
++-----------------+
+| emp_details     |
+| log_emp_details |
+| number          |
+| price_logs      |
+| stud_marks      |
++-----------------+
+5 rows in set (0.00 sec)
+
+MariaDB [d13]> CREATE TRIGGER`d13`.`emp_details_AINS` AFTER INSERT ON`d13`.`emp_details`FOR EACH ROW BEGININSERTINTOlog_emp_detailsVALUES(NEW.employee_id, NEW.salary,NOW());
+    -> CREATE TRIGGER`d13`.`emp_details_AINS` AFTER INSERT ON`d13`.`emp_details`FOR EACH ROW BEGININSERTINTOlog_emp_detailsVALUES(NEW.employee_id, NEW.salary,NOW());  $$
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(NEW.employee_id, NEW.salary,NOW());
+CREATE TRIGGER`d13`.`emp_details_AINS` AF' at line 1
+MariaDB [d13]> CREATE TRIGGER`d13`.`emp_details_AINS` AFTER INSERT ON`d13`.`emp_details`FOR EACH ROW BEGIN INSERT INTO log_emp_details VALUES(NEW.employee_id, NEW.salary,NOW()); end$$
+Query OK, 0 rows affected (0.20 sec)
+
+MariaDB [d13]> select * from log_emp_details$$
+Empty set (0.00 sec)
+
+MariaDB [d13]> insert into emp_details values(106,'jk','jk','jk@jk.com,123456,null,'instructor',1200.00,100);
+    '> $$
+    '> $$
+    '> '
+    -> $$
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'instructor',1200.00,100);
+$$
+$$
+'' at line 1
+MariaDB [d13]> insert into emp_details values(106,'jk','jk','jk@jk.com,123456,null,'instructor',1200.00,100)$$
+    '> '
+    -> $$
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'instructor',1200.00,100)$$
+'' at line 1
+MariaDB [d13]> insert into emp_details values(106,'jk','jk','jk@jk.com',123456,null,'instructor',1200.00,100)$$
+Query OK, 1 row affected, 1 warning (0.19 sec)
+
+MariaDB [d13]> select * from emp_details;
+    -> $$
++-------------+------------+-----------+---------------------------+--------------+------------+------------+----------+----------------+
+| EMPLOYEE_ID | FIRST_NAME | LAST_NAME | EMAIL                     | PHONE_NUMBER | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT |
++-------------+------------+-----------+---------------------------+--------------+------------+------------+----------+----------------+
+|         100 | STEVEN     | KING      | STEVEN.KING@GMAIL.COM     | 2345678      | 1998-01-14 | AD_PRES    | 24000.00 |           0.10 |
+|         101 | NEENA      | KOCHHAR   | NEENA.KOCHHAR@GMAIL.COM   | 2345678      | 2002-10-10 | AD_VP      | 17000.00 |           0.50 |
+|         102 | LEX        | DE HANN   | LEX.HANN@GMAIL.COM        | 2345678      | 1995-10-20 | AD_VP      | 17000.00 |           0.50 |
+|         103 | ALEXANDER  | HUNOLD    | ALEXANDER.HUNOLD@GMAIL.CO | 2345678      | 2002-11-23 | IT_PROG    |  9000.00 |           0.25 |
+|         104 | BRUCE      | ERNST     | BRUCE.ERNST@GMAIL.COM     | 2345678      | 2003-08-24 | IT_PROG    |  6000.00 |           0.25 |
+|         105 | DAVID      | AUSTIN    | DAVID.AUSTIN@GMAIL.COM    | 2345678      | 2005-04-10 | IT_PROG    |  4800.00 |           0.25 |
+|         106 | jk         | jk        | jk@jk.com                 | 123456       | NULL       | instructor |  1200.00 |           0.99 |
++-------------+------------+-----------+---------------------------+--------------+------------+------------+----------+----------------+
+7 rows in set (0.00 sec)
+
+MariaDB [d13]> select * from log_emp_details$$
++-------------+---------+---------------------+
+| EMPLOYEE_ID | SALARY  | EDTTIME             |
++-------------+---------+---------------------+
+|         106 | 1200.00 | 2018-01-24 08:46:33 |
++-------------+---------+---------------------+
+1 row in set (0.00 sec)
+
+MariaDB [d13]> CREATE or REPLACE TRIGGER`emp_details_BINS`BEFORE INSERT ON emp_details FOR EACH ROW BEGIN SET NEW.FIRST_NAME = TRIM(NEW.FIRST_NAME); SET NEW.LAST_NAME=TRIM(NEW.LAST_NAME);SETNEW.JOB_ID=UPPER(NEW.JOB_ID);
+    -> $$
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.JOB_ID=UPPER(NEW.JOB_ID)' at line 1
+MariaDB [d13]> CREATE or REPLACE TRIGGER`emp_details_BINS`BEFORE INSERT ON emp_details FOR EACH ROW BEGIN SET NEW.FIRST_NAME = TRIM(NEW.FIRST_NAME); SET NEW.LAST_NAME=TRIM(NEW.LAST_NAME); SET NEW.JOB_ID = UPPER(NEW.JOB_ID); end$$
+Query OK, 0 rows affected (0.09 sec)
+
+MariaDB [d13]>  INSERT INTO emp_details VALUES (334, ' Ana ', ' King', 'ANA', ’212.212.21201', '2013-02-05', 'it_prog', 17000, .50);
+    -> $$
+Query OK, 1 row affected (0.06 sec)
+
+MariaDB [d13]> SELECT * FROM EMP_DETAILS $$
++-------------+------------+-----------+---------------------------+---------------+------------+------------+----------+----------------+
+| EMPLOYEE_ID | FIRST_NAME | LAST_NAME | EMAIL                     | PHONE_NUMBER  | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT |
++-------------+------------+-----------+---------------------------+---------------+------------+------------+----------+----------------+
+|         100 | STEVEN     | KING      | STEVEN.KING@GMAIL.COM     | 2345678       | 1998-01-14 | AD_PRES    | 24000.00 |           0.10 |
+|         101 | NEENA      | KOCHHAR   | NEENA.KOCHHAR@GMAIL.COM   | 2345678       | 2002-10-10 | AD_VP      | 17000.00 |           0.50 |
+|         102 | LEX        | DE HANN   | LEX.HANN@GMAIL.COM        | 2345678       | 1995-10-20 | AD_VP      | 17000.00 |           0.50 |
+|         103 | ALEXANDER  | HUNOLD    | ALEXANDER.HUNOLD@GMAIL.CO | 2345678       | 2002-11-23 | IT_PROG    |  9000.00 |           0.25 |
+|         104 | BRUCE      | ERNST     | BRUCE.ERNST@GMAIL.COM     | 2345678       | 2003-08-24 | IT_PROG    |  6000.00 |           0.25 |
+|         105 | DAVID      | AUSTIN    | DAVID.AUSTIN@GMAIL.COM    | 2345678       | 2005-04-10 | IT_PROG    |  4800.00 |           0.25 |
+|         106 | jk         | jk        | jk@jk.com                 | 123456        | NULL       | instructor |  1200.00 |           0.99 |
+|         334 | Ana        | King      | ANA                       | 212.212.21201 | 2013-02-05 | IT_PROG    | 17000.00 |           0.50 |
++-------------+------------+-----------+---------------------------+---------------+------------+------------+----------+----------------+
+8 rows in set (0.00 sec)
+
+MariaDB [d13]>  SHOW TRIGGERS FROM d13;
+    -> $$
++------------------+--------+-------------+---------------------------------------------------------------------------------------------------------------------------------+--------+---------+--------------------------------------------+----------------+----------------------+----------------------+--------------------+
+| Trigger          | Event  | Table       | Statement                                                                                                                       | Timing | Created | sql_mode                                   | Definer        | character_set_client | collation_connection | Database Collation |
++------------------+--------+-------------+---------------------------------------------------------------------------------------------------------------------------------+--------+---------+--------------------------------------------+----------------+----------------------+----------------------+--------------------+
+| emp_details_BINS | INSERT | emp_details | BEGIN SET NEW.FIRST_NAME = TRIM(NEW.FIRST_NAME); SET NEW.LAST_NAME=TRIM(NEW.LAST_NAME); SET NEW.JOB_ID = UPPER(NEW.JOB_ID); end | BEFORE | NULL    | NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION | root@localhost | cp850                | cp850_general_ci     | latin1_swedish_ci  |
+| emp_details_AINS | INSERT | emp_details | BEGIN INSERT INTO log_emp_details VALUES(NEW.employee_id, NEW.salary,NOW()); end                                                | AFTER  | NULL    | NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION | root@localhost | cp850                | cp850_general_ci     | latin1_swedish_ci  |
++------------------+--------+-------------+---------------------------------------------------------------------------------------------------------------------------------+--------+---------+--------------------------------------------+----------------+----------------------+----------------------+--------------------+
+2 rows in set (0.02 sec)
+
+MariaDB [d13]> CREATE or REPLACE TRIGGER`emp_details_AUPD`AFTERUPDATEONemp_detailsFOREACHROW
+    -> $$
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AFTERUPDATEONemp_detailsFOREACHROW' at line 1
+MariaDB [d13]> CREATE or REPLACE TRIGGER`emp_details_AUPD`AFTER UPDATE ON emp_details FOR EACH ROW BEGIN INSERT INTO LOG_EMP_DETAILS_UPDATE VALUES (user(),CONCAT('Update employee Record ',  OLD.FIRST_NAME,' Old Salary :',OLD.Salary,' New Salary : ',NEW.Salary),NOW());
+    -> end$$
+Query OK, 0 rows affected (0.16 sec)
+
+MariaDB [d13]>  UPDATE EMP_DETAILS SETSALARY = SALARY + 1000;
+    -> $$
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= SALARY + 1000' at line 1
+MariaDB [d13]>  UPDATE EMP_DETAILS SET SALARY = SALARY + 1000;$$
+ERROR 1146 (42S02): Table 'd13.LOG_EMP_DETAILS_UPDATE' doesn't exist
+MariaDB [d13]>  UPDATE EMP_DETAILS SET SALARY = SALARY + 1000 $$
+ERROR 1146 (42S02): Table 'd13.LOG_EMP_DETAILS_UPDATE' doesn't exist
+MariaDB [d13]> show tables;
+    -> $$
++-----------------+
+| Tables_in_d13   |
++-----------------+
+| emp_details     |
+| log_emp_details |
+| number          |
+| price_logs      |
+| stud_marks      |
++-----------------+
+5 rows in set (0.00 sec)
+
+MariaDB [d13]> create table stud_marks(sub_name varchar(30), marks integer);
+    -> $$
+ERROR 1050 (42S01): Table 'stud_marks' already exists
+MariaDB [d13]> CREATE OR REPLACE TABLE LOG_EMP_DETAILS_UPDATE(    USER VARCHAR(50),    DESCRIPTION VARCHAR(100),    UDTTIME DATETIME);$$
+Query OK, 0 rows affected (0.39 sec)
+
+MariaDB [d13]> CREATE or REPLACE TRIGGER`emp_details_AUPD`AFTER UPDATE ON emp_details FOR EACH ROW BEGIN INSERT INTO LOG_EMP_DETAILS_UPDATE VALUES (user(),CONCAT('Update employee Record ',  OLD.FIRST_NAME,' Old Salary :',OLD.Salary,' New Salary : ',NEW.Salary),NOW());
+    -> $$
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+MariaDB [d13]> CREATE or REPLACE TRIGGER`emp_details_AUPD`AFTER UPDATE ON emp_details FOR EACH ROW BEGIN INSERT INTO LOG_EMP_DETAILS_UPDATE VALUES (user(),CONCAT('Update employee Record ',  OLD.FIRST_NAME,' Old Salary :',OLD.Salary,' New Salary : ',NEW.Salary),NOW());
+    ->     -> end$$
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-> end' at line 2
+MariaDB [d13]> CREATE or REPLACE TRIGGER`emp_details_AUPD`AFTERUPDATEONemp_detailsFOREACHROW
+    -> $$
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AFTERUPDATEONemp_detailsFOREACHROW' at line 1
+MariaDB [d13]> CREATE or REPLACE TRIGGER`emp_details_AUPD`AFTER UPDATE ON emp_details FOR EACH ROW BEGIN INSERT INTO LOG_EMP_DETAILS_UPDATE VALUES (user(), CONCAT('Update employee Record ', OLD.FIRST_NAME,' Old Salary :',OLD.Salary,' New Salary : ',NEW.Salary),NOW());
+    -> END$$
+Query OK, 0 rows affected (0.23 sec)
+
+MariaDB [d13]>  UPDATE EMP_DETAILS SETSALARY = SALARY + 1000;
+    -> $$
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= SALARY + 1000' at line 1
+MariaDB [d13]>  UPDATE EMP_DETAILS SET SALARY = SALARY + 1000 $$
+Query OK, 8 rows affected (0.14 sec)
+Rows matched: 8  Changed: 8  Warnings: 0
+
+MariaDB [d13]> SELECT * FROM EMP_DETAILS;
+    -> $$
++-------------+------------+-----------+---------------------------+---------------+------------+------------+----------+----------------+
+| EMPLOYEE_ID | FIRST_NAME | LAST_NAME | EMAIL                     | PHONE_NUMBER  | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT |
++-------------+------------+-----------+---------------------------+---------------+------------+------------+----------+----------------+
+|         100 | STEVEN     | KING      | STEVEN.KING@GMAIL.COM     | 2345678       | 1998-01-14 | AD_PRES    | 25000.00 |           0.10 |
+|         101 | NEENA      | KOCHHAR   | NEENA.KOCHHAR@GMAIL.COM   | 2345678       | 2002-10-10 | AD_VP      | 18000.00 |           0.50 |
+|         102 | LEX        | DE HANN   | LEX.HANN@GMAIL.COM        | 2345678       | 1995-10-20 | AD_VP      | 18000.00 |           0.50 |
+|         103 | ALEXANDER  | HUNOLD    | ALEXANDER.HUNOLD@GMAIL.CO | 2345678       | 2002-11-23 | IT_PROG    | 10000.00 |           0.25 |
+|         104 | BRUCE      | ERNST     | BRUCE.ERNST@GMAIL.COM     | 2345678       | 2003-08-24 | IT_PROG    |  7000.00 |           0.25 |
+|         105 | DAVID      | AUSTIN    | DAVID.AUSTIN@GMAIL.COM    | 2345678       | 2005-04-10 | IT_PROG    |  5800.00 |           0.25 |
+|         106 | jk         | jk        | jk@jk.com                 | 123456        | NULL       | instructor |  2200.00 |           0.99 |
+|         334 | Ana        | King      | ANA                       | 212.212.21201 | 2013-02-05 | IT_PROG    | 18000.00 |           0.50 |
++-------------+------------+-----------+---------------------------+---------------+------------+------------+----------+----------------+
+8 rows in set (0.00 sec)
+
+MariaDB [d13]> SELECT * FROM LOG_EMP_DETAILS_UPDATE$$
++----------------+----------------------------------------------------------------------------+---------------------+
+| USER           | DESCRIPTION                                                                | UDTTIME             |
++----------------+----------------------------------------------------------------------------+---------------------+
+| root@localhost | Update employee Record STEVEN Old Salary :24000.00 New Salary : 25000.00   | 2018-01-24 09:20:28 |
+| root@localhost | Update employee Record NEENA Old Salary :17000.00 New Salary : 18000.00    | 2018-01-24 09:20:28 |
+| root@localhost | Update employee Record LEX Old Salary :17000.00 New Salary : 18000.00      | 2018-01-24 09:20:28 |
+| root@localhost | Update employee Record ALEXANDER Old Salary :9000.00 New Salary : 10000.00 | 2018-01-24 09:20:28 |
+| root@localhost | Update employee Record BRUCE Old Salary :6000.00 New Salary : 7000.00      | 2018-01-24 09:20:28 |
+| root@localhost | Update employee Record DAVID Old Salary :4800.00 New Salary : 5800.00      | 2018-01-24 09:20:28 |
+| root@localhost | Update employee Record jk Old Salary :1200.00 New Salary : 2200.00         | 2018-01-24 09:20:28 |
+| root@localhost | Update employee Record Ana Old Salary :17000.00 New Salary : 18000.00      | 2018-01-24 09:20:28 |
++----------------+----------------------------------------------------------------------------+---------------------+
+8 rows in set (0.02 sec)
+
+MariaDB [d13]> CREATE OR REPLACE TRIGGER`stud_marks_BUPD`BEFORE UPDATE ON stud_marks FOR EACH ROW BEGIN
+    -> SET NEW.TOTAL = NEW.SUB1+NEW.SUB2+NEW.SUB3+NEW.SUB4+NEW.SUB5;SET NEW.PERCENTAGE = NEW.TOTAL/5;IF NEW.PERCENTAGE>= 90 THEN SET NEW.GRADE='EXCELLENT';ELSEIF NEW.PERCENTAGE>= 75 AND NEW.PERCENTAGE<90 THEN SET NEW.GRADE ='VERYGOOD';ELSEIF NEW.PERCENTAGE >= 60 AND NEW.PERCENTAGE<75THEN SET NEW.GRADE ='GOOD';ELSEIF NEW.PERCENTAGE>=40 AND NEW.PERCENTAGE<60 THEN SET NEW.GRADE='AVERAGE';ELSE SETNEW.GRADE='NOTPROMOTED';
+    -> END IF;
+    -> END$$
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SET NEW.GRADE ='GOOD';ELSEIF NEW.PERCENTAGE>=40 AND NEW.PERCENTAGE<60 THEN SET N' at line 2
+MariaDB [d13]> SET NEW.TOTAL = NEW.SUB1+NEW.SUB2+NEW.SUB3+NEW.SUB4+NEW.SUB5;SET NEW.PERCENTAGE = NEW.TOTAL/5;IF NEW.PERCENTAGE>= 90 THEN SET NEW.GRADE='EXCELLENT';ELSEIF NEW.PERCENTAGE>= 75 AND NEW.PERCENTAGE<90 THEN SET NEW.GRADE ='VERYGOOD';ELSEIF NEW.PERCENTAGE >= 60 AND NEW.PERCENTAGE<75THEN SET NEW.GRADE ='GOOD';ELSEIF NEW.PERCENTAGE>=40 AND NEW.PERCENTAGE<60 THEN SET NEW.GRADE='AVERAGE';ELSE SET NEW.GRADE='NOTPROMOTED';END IF END$$
+ERROR 1193 (HY000): Unknown system variable 'TOTAL'
+MariaDB [d13]> UPDATE STUD_MARKS SET SUB1 = 54, SUB2 = 69, SUB3 = 89, SUB4 = 87, SUB5 = 59 WHERE STUDENT_ID = 1;
+    -> $$
+Query OK, 1 row affected (0.08 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [d13]> SELECT * FROM STUD_MARKS$$
++------------+---------+-------+-------+-------+-------+-------+-------+------------+-------+
+| STUDENT_ID | NAME    | SUB1  | SUB2  | SUB3  | SUB4  | SUB5  | TOTAL | PERCENTAGE | GRADE |
++------------+---------+-------+-------+-------+-------+-------+-------+------------+-------+
+|          1 | ALEX    | 54.00 | 69.00 | 89.00 | 87.00 | 59.00 |  NULL |       NULL | NULL  |
+|          2 | BOB     |  NULL |  NULL |  NULL |  NULL |  NULL |  NULL |       NULL | NULL  |
+|          3 | CHARLEY |  NULL |  NULL |  NULL |  NULL |  NULL |  NULL |       NULL | NULL  |
+|          4 | DONNA   |  NULL |  NULL |  NULL |  NULL |  NULL |  NULL |       NULL | NULL  |
++------------+---------+-------+-------+-------+-------+-------+-------+------------+-------+
+4 rows in set (0.00 sec)
+
+MariaDB [d13]> CREATE or REPLACE TRIGGER`emp_details_ADEL`AFTER DELETE ON emp_details FOR EACH ROW BEGIN INSERT INTO LOG_EMP_DETAILS_UPDATE VALUES (user(),CONCAT('Delete Employee Record', OLD.FIRST_NAME, '->Deletedon'),NOW());
+    -> END$$
+Query OK, 0 rows affected (0.23 sec)
+
+MariaDB [d13]> CREATE or REPLACE TRIGGER before_products_update BEFORE UPDATE on Products FOR EACH ROW BEGIN INSERT INTO price_logs (product_code,price) VALUES(old.c ode,old.price);
+    -> END$$
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ode,old.price);
+END' at line 1
+MariaDB [d13]> CREATE or REPLACE TRIGGER before_products_update BEFORE UPDATE on Products FOR EACH ROW BEGIN INSERT INTO price_logs (product_code,price) VALUES(old.code,old.price);END$$
+ERROR 1146 (42S02): Table 'd13.products' doesn't exist
+MariaDB [d13]> CREATE or REPLACE TRIGGER before_products_update BEFORE UPDATE on Products FOR EACH ROW BEGIN INSERT INTO price_logs (product_code,price) VALUES(old.code,old.price);END$$
+ERROR 1146 (42S02): Table 'd13.products' doesn't exist
+MariaDB [d13]>
