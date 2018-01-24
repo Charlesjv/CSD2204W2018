@@ -1,0 +1,65 @@
+
+
+create table numbers (numbers int(10))$$
+
+create procedure primenum(IN value int(5))
+	begin
+		
+		DECLARE a int default 1;
+		DECLARE b int default 1;
+		DECLARE count int default 0;
+		
+		Truncate table numbers; 
+		
+		while(b<=value) do
+			while(a<=b) do
+				if(b%a=0) then
+					set count = count + 1;
+				end if;
+				set a=a+1;
+			end while;
+			if(count = 2) then
+				INSERT into numbers VALUES (b);
+			end if;
+			
+			set a = 1;
+			set b = b+ 1;
+			set count = 0;
+			
+		end while;
+	end$$
+
+Result:
+
+call primenum(100)$$
+
+
+select * from numbers;$$
+      2 |
+|      3 |
+|      5 |
+|      7 |
+|     11 |
+|     13 |
+|     17 |
+|     19 |
+|     23 |
+|     29 |
+|     31 |
+|     37 |
+|     41 |
+|     43 |
+|     47 |
+|     53 |
+|     59 |
+|     61 |
+|     67 |
+|     71 |
+|     73 |
+|     79 |
+|     83 |
+|     89 |
+|     97 |
++--------+
+25 rows in set (0.00 sec)
+
